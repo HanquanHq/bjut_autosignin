@@ -7,6 +7,7 @@
 在使用中有任何问题，欢迎在issue区反馈给我
 
 branch1 为知道bjut.sanyth.com 密码时使用（部分同学密码和xgxt.bjut.edu.cn相同
+
 branch2 （推荐）使用的是有效期一周的ID和TOKEN，通过抓包企业微信打卡很容易获得
 
 建议环境：
