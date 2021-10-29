@@ -1,3 +1,17 @@
+## 紧急更新10/29
+这次系统升级了，表单有了变化
+适用本脚本时请替换post data的内容
+method1: 自己抓包，把data copy过来即可
+method2: 自行修改表单内容按如下格式，并进行url编码encoding后，替换掉脚本中原来的data部分
+```json
+{"xmqkb":{"id":"402880c97b1c114b017b1c2af13d02d8"},"c15":"无情况","c16":"在校且住宿","c17":"在京","c18":"低风险地区","c12":"北京市,北京市,朝阳区,","type":"YQSJSB","location_longitude":116.21161177441111,"location_latitude":39.98611115356111,"location_address":"北京市朝阳区平乐园100号北京工业大学"}
+```
+ps：此处的id为appID，所有人都一样无需修改，你只需要修改地点、经纬度和个人情况即可。
+method3：<懒人包>使用下面的内容替换
+```json
+data=%7B%22xmqkb%22%3A%7B%22id%22%3A%22402880c97b1c114b017b1c2af13d02d8%22%7D%2C%22c15%22%3A%22%E6%97%A0%E6%83%85%E5%86%B5%22%2C%22c16%22%3A%22%E5%9C%A8%E6%A0%A1%E4%B8%94%E4%BD%8F%E5%AE%BF%22%2C%22c17%22%3A%22%E5%9C%A8%E4%BA%AC%22%2C%22c18%22%3A%22%E4%BD%8E%E9%A3%8E%E9%99%A9%E5%9C%B0%E5%8C%BA%22%2C%22c12%22%3A%22%E5%8C%97%E4%BA%AC%E5%B8%82%2C%E5%8C%97%E4%BA%AC%E5%B8%82%2C%E6%9C%9D%E9%98%B3%E5%8C%BA%2C%22%2C%22type%22%3A%22YQSJSB%22%2C%22location_longitude%22%3A116.21161177441111%2C%22location_latitude%22%3A39.98611115356111%2C%22location_address%22%3A%22%E5%8C%97%E4%BA%AC%E5%B8%82%E6%9C%9D%E9%98%B3%E5%8C%BA%E5%B9%B3%E4%B9%90%E5%9B%AD100%E5%8F%B7%E5%8C%97%E4%BA%AC%E5%B7%A5%E4%B8%9A%E5%A4%A7%E5%AD%A6%22%7D&msgUrl=syt%2Fzzapply%2Flist.htm%3Ftype%3DYQSJSB%26xmid%3D402880c97b1c114b017b1c2af13d02d8&uploadFileStr=%7B%7D&multiSelectData=%7B%7D&type=YQSJSB
+```
+
 ## 疫情通每日打卡
 ## autosignin是什么?
 一个基于python3的批量自动打卡脚本 //可能仅限于BJUT？
