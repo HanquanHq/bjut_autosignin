@@ -1,13 +1,13 @@
 import base64
 import requests
 import urllib3
-
+from urllib.parse import quote,unquote
 # 禁用warning
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 # 填写帐号密码
 userAccounts = [
     #    ['userStudentId', 'password'],
-    ['（学号）19010101', '123456（密码）']
+    ['123456', 'password']
 ]
 
 
@@ -75,10 +75,13 @@ def func(username, pwd):
         'Host': 'xgxt.bjut.edu.cn',
         'Content-length': '1204'
     }
+    data3=quote('data={"xmqkb":{"id":"2c95de297d4f8bfa017d85f53d267613"},"c16":"在校且住宿","c17":"在京","c18":"低风险地区","c15":"无情况","c1":"已准确登记","location_address":"北京市朝阳区平乐园100号北京工业大学","type":"YQSJSB"}&msgUrl=syt/zzglappro/index.htm?type=yqsjsb&xmid=2c95de297d4f8bfa017d85f53d267613&multiSelectData={}')
+    data3=data3.replace('%3D','=')
     # 模拟POST 投寄打卡json
     r3 = requests.post(url=url3, headers=h3,
-                       data="data=%7B%22xmqkb%22%3A%7B%22id%22%3A%222c95de297d4f8bfa017d85f53d267613%22%7D%2C%22c16%22%3A%22%E5%9C%A8%E6%A0%A1%E4%B8%94%E4%BD%8F%E5%AE%BF%22%2C%22c17%22%3A%22%E5%9C%A8%E4%BA%AC%22%2C%22c18%22%3A%22%E4%BD%8E%E9%A3%8E%E9%99%A9%E5%9C%B0%E5%8C%BA%22%2C%22c15%22%3A%22%E6%97%A0%E6%83%85%E5%86%B5%22%2C%22c1%22%3A%22%E5%B7%B2%E5%87%86%E7%A1%AE%E7%99%BB%E8%AE%B0%22%2C%22c12%22%3A%22%E5%8C%97%E4%BA%AC%E5%B8%82%2C%E5%8C%97%E4%BA%AC%E5%B8%82%2C%E6%9C%9D%E9%98%B3%E5%8C%BA%2C%22%2C%22type%22%3A%22YQSJSB%22%7D%26msgUrl=syt%2Fzzglappro%2Findex.htm%3Ftype=yqsjsb%26xmid=2c95de297d4f8bfa017d85f53d267613%26multiSelectData=%7B%7D"
+                       data=data3
                        )
+    print(data3)
     print('\nr3状态码：', r3.status_code)
     # success->成功打卡 error->失败 Applied today->今天已经打过卡
     if r3.text == 'success':
